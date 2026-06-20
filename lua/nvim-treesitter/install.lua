@@ -285,7 +285,21 @@ local function do_download(logger, url, project_name, cache_dir, revision, outpu
   do -- Move tmp dir to output dir
     local dir_rev = revision:find('^v%d') and revision:sub(2) or revision
     local repo_project_name = url:match('[^/]-$')
-    local extracted = fs.joinpath(tmp, repo_project_name .. '-' .. dir_rev)
+
+    -- Credits to Thore Bödecker(foxxx0)
+    -- Source:
+    -- https://github.com/foxxx0/nvim-treesitter/commit/698fb325e316f533018ea3ec67f7f2424f67292b
+    local repo_project_name_suffixed = repo_project_name .. '-' .. dir_rev
+    local extracted = fs.joinpath(tmp, repo_project_name_suffixed)
+    if not vim.uv.fs_stat(extracted) then
+      logger:debug("Directory fstat() error on '%s'.", extracted)
+      extracted = fs.joinpath(tmp, repo_project_name)
+      logger:debug("Trying '%s' instead ...", extracted)
+    end
+    if not vim.uv.fs_stat(extracted) then
+      return logger:error("Directory fstat() error on '%s'.", extracted)
+    end
+
     logger:debug('Moving %s to %s/...', extracted, output_dir)
     local err = uv_rename(extracted, output_dir)
     a.schedule()
