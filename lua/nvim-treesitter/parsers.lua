@@ -288,9 +288,9 @@ return {
     install_info = {
       revision = '50ca9e6fcfb16a2cbcad59203cfd8ad650e25c49',
       url = 'https://github.com/crystal-lang-tools/tree-sitter-crystal',
+      generate = false,
     },
     maintainers = { '@keidax' },
-    requires = { 'crystal' },
     tier = 2,
   },
   css = {
