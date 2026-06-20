@@ -284,6 +284,15 @@ return {
     requires = { 'c' },
     tier = 2,
   },
+  crystal = {
+    install_info = {
+      revision = '50ca9e6fcfb16a2cbcad59203cfd8ad650e25c49',
+      url = 'https://github.com/crystal-lang-tools/tree-sitter-crystal',
+    },
+    maintainers = { '@keidax' },
+    requires = { 'crystal' },
+    tier = 2,
+  },
   css = {
     install_info = {
       revision = 'dda5cfc5722c429eaba1c910ca32c2c0c5bb1a3f',
