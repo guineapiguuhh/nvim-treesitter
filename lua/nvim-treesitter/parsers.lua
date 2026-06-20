@@ -903,6 +903,15 @@ return {
     maintainers = { '@lykahb' },
     tier = 2,
   },
+  haxe = {
+    install_info = {
+      revision = 'f2a2394d9ca7a6099f78d8b0d178530e7c9a8e26',
+      url = 'https://github.com/vantreeseba/tree-sitter-haxe',
+      generate = false
+    },
+    maintainers = { '@vantreeseba' },
+    tier = 2,
+  },
   hcl = {
     install_info = {
       revision = '64ad62785d442eb4d45df3a1764962dafd5bc98b',
