@@ -338,7 +338,7 @@ return {
   },
   d = {
     install_info = {
-      revision = 'fb028c8f14f4188286c2eef143f105def6fbf24f',
+      revision = '64f27931b4e6fdd75af1102c79bacbca68a8dacc',
       url = 'https://github.com/gdamore/tree-sitter-d',
     },
     maintainers = { '@amaanq' },
